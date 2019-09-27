@@ -10,8 +10,7 @@ def f_z(x,y):
 y0 = 0.0
 z0 = 0.0
 
-
-for i in range(20):
+for i in range(10):
     x0 = f_x(y0,z0)
     y0 = f_y(x0,z0)
     z0 = f_z(x0,y0)
