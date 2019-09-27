@@ -1,18 +1,21 @@
-def f_x(y,z):
-    return float((17-y+2*z)/20)
+def f(y,z):
+    x = float((17-y+2*z)/20)
+    y = float((z-18-3*x)/20)
+    z = float((25-2*x+3*y)/20)
+    
+    return (x,y,z)
 
-def f_y(x,z):
-    return float((z-18-3*x)/20)
-
-def f_z(x,y):
-    return float((25-2*x+3*y)/20)
-
+x0 = 0.0
 y0 = 0.0
 z0 = 0.0
+count  = 0
 
-for i in range(10):
-    x0 = f_x(y0,z0)
-    y0 = f_y(x0,z0)
-    z0 = f_z(x0,y0)
+while abs(float(20*x0+y0-2*z0-17))>0.00000000000000000000000001: 
+    x0,y0,z0 = f(y0,z0)
+    count = count + 1
 
-    print(x0,y0,z0)
+print("<----------solution of the equations------------->")
+print("x = {}".format(x0))
+print("y = {}".format(y0))
+print("z = {}".format(z0))
+print("counter = {}".format(count))
