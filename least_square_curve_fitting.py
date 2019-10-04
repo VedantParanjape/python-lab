@@ -22,6 +22,11 @@ for k in x:
     b1_d = b1_d + (k**2-X) 
 
 b1 = b1_n/b1_d
-
+b0 = Y-b1*X
 print("b1: %8.6f"%(b1), sep = ' ')
-print("b0: %8.6f"%(Y-b1*X), sep = ' ')
+print("b0: %8.6f"%(b0), sep = ' ')
+
+print("| real  |   calc  |")
+
+for i,j in zip(x,y):
+    print("| {} | {} |".format(j, round(b0 + b1*i, 5)))
