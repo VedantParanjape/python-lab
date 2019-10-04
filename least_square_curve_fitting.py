@@ -29,14 +29,16 @@ print("b0: %8.6f"%(b0))
 
 print("| real  |   calc  |")
 
+y_app = []
 err = 0
 for i,j in zip(x,y):
     print("| {} | {} |".format(j, round(b0 + b1*i, 5)))
     err = err + (j-b0 + b1*i)**2
+    y_app.append(b0 + b1*i)
 
 err = err/9
 print("error: {}".format(round(err, 5)))
-# plt.plot(x)
+plt.plot(x,y_app)
 plt.scatter(x,y)
 # plt.plot(y)
 # plt.scatter(x,y)
