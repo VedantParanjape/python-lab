@@ -12,19 +12,18 @@ for j in y:
     Y = Y + j
 Y = Y/9
 
-b1_n = 0
-b1_d = 0
+def summation(val):
+    sum = 0
+    for i in val:
+        sum = sum + i
 
-for i,j in zip(x,y):
-    b1_n = b1_n + (i-X)*(j-Y)
+    return sum
 
-for k in x:
-    b1_d = b1_d + (k**2-X) 
-
-b1 = b1_n/b1_d
+b1 = (summation(i*j for i,j in zip(x,y)) - summation(x)*summation(y)/9) / (summation(p**2 for p in x) - (summation(x)**2)/9)
 b0 = Y-b1*X
-print("b1: %8.6f"%(b1), sep = ' ')
-print("b0: %8.6f"%(b0), sep = ' ')
+
+print("b1: %8.6f"%(b1))
+print("b0: %8.6f"%(b0))
 
 print("| real  |   calc  |")
 
