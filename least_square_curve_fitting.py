@@ -1,3 +1,5 @@
+from matplotlib import pyplot as plt
+
 x = [55,105,155,205,255,305,355,405,455]
 y = [0.496, 0.645, 0.761, 0.867, 0.957, 1.037,1.113,1.194,1.254]
 
@@ -27,5 +29,15 @@ print("b0: %8.6f"%(b0))
 
 print("| real  |   calc  |")
 
+err = 0
 for i,j in zip(x,y):
     print("| {} | {} |".format(j, round(b0 + b1*i, 5)))
+    err = err + (j-b0 + b1*i)**2
+
+err = err/9
+print("error: {}".format(round(err, 5)))
+# plt.plot(x)
+plt.scatter(x,y)
+# plt.plot(y)
+# plt.scatter(x,y)
+plt.show()
