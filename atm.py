@@ -12,9 +12,6 @@ class atm:
         details = {'name':name, 'balance':balance, 'pin':pin}
         temp = {self.__counter:details}
         self.__account.update(temp)
-        
-        # print('Account Number: ',self.__counter)
-
         self.__counter = self.__counter + 1
 
     def CheckUser(self, account_number, pin):
@@ -48,6 +45,7 @@ class atm:
         else:
             print('incorrect pin')
             a = input() 
+            
 def menu():
     os.system('clear')
     print('1. Check Balance')
